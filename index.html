@@ -164,28 +164,30 @@
 </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const highlightTexts = document.querySelectorAll('.highlight-text'); // Altera para pegar todos os textos com a classe
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    const highlightTexts = document.querySelectorAll('.highlight-text');
 
     const options = {
-        root: null, // Use the viewport as the root
-        threshold: 0.1 // 10% of the element is visible
+        root: null,
+        threshold: 0.1 // 10% do elemento visível
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible'); // Adiciona a classe 'visible' ao texto que está visível
-                observer.unobserve(entry.target); // Para observar após se tornar visível
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Para de observar após se tornar visível
             }
         });
     }, options);
 
     highlightTexts.forEach(text => {
-        observer.observe(text); // Observa cada texto destacado
+        observer.observe(text);
     });
 });
         </script>
+        
 </body>
 </html>
+
