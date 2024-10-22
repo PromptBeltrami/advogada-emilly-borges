@@ -377,7 +377,7 @@ footer p {
     .header-left h1 {
         font-size: 18px; /* Reduz o tamanho da fonte do título */
         text-align: center; /* Centraliza o texto do título */
-        margin: 0px 100px; /* Margem padrão ao redor do título */
+        margin: 0px 30px; /* Margem padrão ao redor do título */
     }
 
     .header-right {
@@ -450,45 +450,55 @@ footer p {
         margin-bottom: 20px; /* Espaço abaixo de cada box */
     }
     
+    .contact-box img {
+        width: 45px; /* Corrige a propriedade de Width para width */
+        height: 30px;
+        margin-bottom: 15px;
+    }
+    
     #sobre-mim {
         padding: 60px 10%; /* Padding ajustado */
     }
     
     footer {
+        display: flex; /* Garante que o rodapé use flexbox */
         flex-direction: column; /* Coloca o conteúdo do rodapé em coluna */
-        text-align: center; /* Centraliza o texto no rodapé */
         align-items: center; /* Centraliza os itens do rodapé */
+        justify-content: center; /* Centraliza o conteúdo verticalmente */
+        text-align: center; /* Centraliza o texto no rodapé */
         padding: 20px 2%; /* Ajuste no padding lateral */
     }
     
     .footer-left, .footer-right {
-        margin-bottom: 20px; /* Espaço abaixo do rodapé */
-    }
-    
-    .footer-left {
+        margin-bottom: 10px; /* Espaço abaixo do rodapé para separação */
+        display: flex; /* Habilita flexbox para alinhar os itens */
         flex-direction: column; /* Organiza verticalmente os elementos */
         align-items: center; /* Centraliza os itens */
-    }
-    
-    .footer-right {
-        align-items: center; /* Centraliza os itens do lado direito do rodapé */
-        flex-direction: column; /* Organiza verticalmente os elementos */
+        width: 100%; /* Garante que ocupem toda a largura disponível */
     }
     
     .social-container {
-        flex-direction: row; /* Organiza as redes sociais em linha */
+        display: flex; /* Garante que os ícones sociais sejam exibidos como flex */
+        flex-wrap: wrap; /* Permite que os itens quebrem em múltiplas linhas */
         justify-content: center; /* Centraliza os ícones sociais */
         margin-bottom: 15px; /* Ajusta o espaçamento entre os ícones */
     }
 
+    .social-container img {
+        width: 45px; /* Ajuste o tamanho dos ícones sociais */
+        height: auto; /* Mantém a proporção */
+        margin: 5px; /* Espaço entre os ícones */
+    }
+    
     .footer-logo {
         width: 250px; /* Reduz o tamanho da logo */
         height: auto; /* Mantém a proporção */
-        margin-bottom: 15px; /* Espaço abaixo da logo */
+        margin-bottom: 10px; /* Espaço abaixo da logo */
     }
 
     footer p {
         font-size: 12px; /* Reduz o tamanho da fonte */
+        margin: 0; /* Remove margens para melhor centralização */
     }
 }
 
@@ -601,6 +611,5 @@ footer p {
             transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
         }
     }
-}    
-
+}
 
