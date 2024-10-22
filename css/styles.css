@@ -6,11 +6,13 @@
 
 .highlight-text {
     opacity: 0;
+    transform: translateY(20px); /* Move 20px para baixo */
     transition: opacity 0.5s ease-in-out; /* Suaviza a transição */
 }
 
 .highlight-text.visible {
     opacity: 1; /* Torna o texto visível */
+    transform: translateY(0); /* Restaura a posição original */
 }
 
 body {
@@ -297,7 +299,7 @@ h2 {
 
 .contact-box img {
     width: 50px;
-    height: 35px;
+    height: 50px;
     margin-bottom: 15px;
 }
 
