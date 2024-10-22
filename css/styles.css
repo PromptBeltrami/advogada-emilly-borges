@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+.highlight-text {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Suaviza a transição */
+}
+
+.highlight-text.visible {
+    opacity: 1; /* Torna o texto visível */
+}
+
 body {
     overflow: auto;
     font-family: 'Montserrat', sans-serif;
@@ -50,7 +59,7 @@ header {
     height: 20px; 
     filter: grayscale(100%); 
     background-color: transparent;
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
 .header-left h1 {
@@ -247,6 +256,8 @@ h2 {
     font-size: 16px;
     color: #797676;
     line-height: 1.7;
+    word-spacing: -0.1em;
+    hyphens: auto;
     text-align: justify;
 }
 
@@ -354,6 +365,7 @@ footer a {
     width: 30px; 
     height: 30px; 
     margin-right: 10px; 
+    filter: invert(1);
 }
 
 footer p {
@@ -411,7 +423,7 @@ footer p {
         max-width: 90%; /* Aumenta a largura máxima do texto para telas menores */
         text-align: center; /* Centraliza o texto */
     }
-
+    
     .impact-phrase {
         font-size: 24px; /* Ajusta o tamanho da fonte da frase de impacto */
         margin: 10px 0; /* Adiciona espaço acima e abaixo */
@@ -457,7 +469,7 @@ footer p {
     }
     
     #sobre-mim {
-        padding: 60px 10%; /* Padding ajustado */
+        padding: 40px 5%; /* Padding ajustado */
     }
     
     footer {
@@ -489,7 +501,7 @@ footer p {
         height: auto; /* Mantém a proporção */
         margin: 5px; /* Espaço entre os ícones */
     }
-    
+
     .footer-logo {
         width: 250px; /* Reduz o tamanho da logo */
         height: auto; /* Mantém a proporção */
@@ -611,5 +623,5 @@ footer p {
             transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
         }
     }
-}
+}    
 
