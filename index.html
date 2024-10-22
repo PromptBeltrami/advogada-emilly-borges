@@ -170,24 +170,25 @@
 
     const options = {
         root: null,
-        threshold: 0.1 // 10% do elemento visível
+        threshold: 0.2 // Altera para 20% do elemento visível
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Para de observar após se tornar visível
+                entry.target.classList.add('visible'); // Adiciona a classe 'visible'
+                observer.unobserve(entry.target); // Para observar após se tornar visível
             }
         });
     }, options);
 
     highlightTexts.forEach(text => {
-        observer.observe(text);
+        observer.observe(text); // Observa cada texto destacado
     });
 });
         </script>
-        
+
 </body>
 </html>
+
 
