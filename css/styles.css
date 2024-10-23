@@ -377,6 +377,14 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    
+     .social-logo {
+        justify-content: flex-start; /* Mantém as logos sociais à esquerda */
+        margin-right: auto; /* Garante que as logos fiquem à esquerda */
+        display: flex;
+        flex-direction: column;
+    }
+    
     header {
         flex-direction: column; /* Empilha o cabeçalho verticalmente */
         align-items: center; /* Centraliza os itens */
@@ -384,7 +392,7 @@ footer p {
     }
 
    .header-left {
-        justify-content: center; /* Centraliza as logos horizontalmente */
+        justify-content: space-between; /* Centraliza as logos horizontalmente */
         width: 100%; /* Faz com que a seção ocupe toda a largura */
         display: flex;
         flex-direction: column;
@@ -395,6 +403,7 @@ footer p {
         font-size: 15px; /* Reduz o tamanho da fonte do título */
         text-align: center; /* Centraliza o texto do título */
         margin: 0; /* Remove a margem lateral */
+        width: auto;
     }
 
     .header-right {
