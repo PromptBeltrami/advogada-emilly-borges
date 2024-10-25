@@ -279,17 +279,25 @@ h2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: nowrap; /* Impede que as caixas empilhem */
+    padding: 60px 10px;
+    gap: 20px; /* Adiciona um espaço entre os elementos */
 }
 
 .contact-box {
     background-color: #fff;
     padding: 20px;
-    width: 30%;
+    width: 30vw; /* Defina um valor percentual para que caibam lado a lado */
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 200px;
+    max-width: 100%; /* Adapta o tamanho da caixa para não estourar */
 }
 
 .contact-box:hover {
@@ -299,7 +307,7 @@ h2 {
 
 .contact-box img {
     width: 50px;
-    height: 50px;
+    height: 35px;
     margin-bottom: 15px;
 }
 
@@ -376,22 +384,22 @@ footer p {
     text-align: center; 
 }
 
+/* Ajustes para telas menores que 768px */
 @media (max-width: 768px) {
-    
-     .social-logo {
+    .social-logo {
         justify-content: flex-start; /* Mantém as logos sociais à esquerda */
         margin-right: auto; /* Garante que as logos fiquem à esquerda */
         display: flex;
         flex-direction: column;
     }
-    
+
     header {
         flex-direction: column; /* Empilha o cabeçalho verticalmente */
         align-items: center; /* Centraliza os itens */
         padding: 10px 0; /* Adiciona padding para melhor espaçamento */
     }
 
-   .header-left {
+    .header-left {
         justify-content: space-between; /* Centraliza as logos horizontalmente */
         width: 100%; /* Faz com que a seção ocupe toda a largura */
         display: flex;
@@ -437,55 +445,55 @@ footer p {
         max-width: 90%; /* Aumenta a largura máxima do texto para telas menores */
         text-align: center; /* Centraliza o texto */
     }
-    
+
     .impact-phrase {
         font-size: 24px; /* Ajusta o tamanho da fonte da frase de impacto */
         margin: 10px 0; /* Adiciona espaço acima e abaixo */
     }
-    
+
     #servicos {
         padding: 50px 10%; /* Ajusta o padding para a seção de serviços */
     }
-    
+
     .service-container {
         display: flex; /* Garante que os serviços sejam exibidos como flex */
         flex-direction: column; /* Alinha verticalmente */
         gap: 20px; /* Espaçamento entre os serviços */
     }
-    
+
     .service-box {
         width: 100%; /* Largura completa */
         height: auto; /* Mantém a altura automática */
         margin: 0; /* Remove margem para evitar espaçamento extra */
     }
-    
+
     .contact-button {
         padding: 10px 20px; /* Ajusta o padding dos botões */
         font-size: 14px; /* Tamanho da fonte dos botões */
         width: 90%; /* Largura dos botões */
         margin: 10px auto; /* Centraliza os botões */
     }
-    
+
     .contact-container {
         flex-direction: column; /* Coloca os itens em coluna */
         align-items: center; /* Centraliza os itens */
     }
-    
+
     .contact-box {
         width: 100%; /* Largura completa para boxes de contato */
         margin-bottom: 20px; /* Espaço abaixo de cada box */
     }
-    
+
     .contact-box img {
         width: 45px; /* Corrige a propriedade de Width para width */
         height: 30px;
         margin-bottom: 15px;
     }
-    
+
     #sobre-mim {
         padding: 40px 5%; /* Padding ajustado */
     }
-    
+
     footer {
         display: flex; /* Garante que o rodapé use flexbox */
         flex-direction: column; /* Coloca o conteúdo do rodapé em coluna */
@@ -494,7 +502,7 @@ footer p {
         text-align: center; /* Centraliza o texto no rodapé */
         padding: 20px 2%; /* Ajuste no padding lateral */
     }
-    
+
     .footer-left, .footer-right {
         margin-bottom: 10px; /* Espaço abaixo do rodapé para separação */
         display: flex; /* Habilita flexbox para alinhar os itens */
@@ -502,7 +510,7 @@ footer p {
         align-items: center; /* Centraliza os itens */
         width: 100%; /* Garante que ocupem toda a largura disponível */
     }
-    
+
     .social-container {
         display: flex; /* Garante que os ícones sociais sejam exibidos como flex */
         flex-wrap: wrap; /* Permite que os itens quebrem em múltiplas linhas */
@@ -528,114 +536,170 @@ footer p {
     }
 }
 
+/* Ajustes para telas entre 768px e 1024px */
 @media (max-width: 1024px) and (min-width: 768px) {
     .about-container {
-        margin: 40px 0; /* Aumenta a margem superior e inferior para evitar a proximidade */
-        flex-direction: column; /* Garante que a imagem e o texto estejam em coluna */
+        margin: 40px 0; /* Aumenta a margem superior e inferior para evitar proximidade */
+        flex-direction: column; /* Alinha a imagem e o texto em coluna */
         align-items: center; /* Centraliza os itens */
         padding: 20px; /* Adiciona padding para espaçamento */
     }
 
     .rounded-image {
-        width: 100%; /* Para garantir que a imagem se ajuste ao tamanho do dispositivo */
-        max-width: 300px; /* Limita a largura máxima */
-        margin-bottom: 30px; /* Aumenta o espaço abaixo da imagem */
+        width: 100%; /* Ajusta a imagem ao tamanho da tela */
+        max-width: 300px; /* Limita a largura máxima da imagem */
+        margin-bottom: 30px; /* Espaçamento abaixo da imagem */
     }
 
     .impact-phrase {
         font-size: 30px; /* Tamanho da fonte para dispositivos menores */
+        text-align: center; /* Centraliza a frase de impacto */
     }
-    
+
     #servicos {
         padding: 60px 5%; /* Ajusta o padding para a seção de serviços */
+        text-align: center; /* Centraliza o conteúdo da seção */
     }
-    
+
     .service-container {
+        display: grid;
         grid-template-columns: repeat(2, 1fr); /* Duas colunas para a grade de serviços */
         gap: 15px; /* Espaço entre os serviços */
+        justify-content: center; /* Centraliza os itens da grade */
     }
-    
+
     .service-box {
         width: 100%; /* A largura do box de serviço se ajusta ao container */
         height: auto; /* Mantém a altura automática */
     }
-    
+
+    .contact-container {
+        display: flex;
+        justify-content: center; /* Centraliza os boxes de contato */
+        flex-wrap: wrap; /* Permite que os boxes quebrem linha se necessário */
+        gap: 20px; /* Espaçamento entre os boxes */
+    }
+
     .contact-box {
         width: 45%; /* Ajusta a largura dos boxes de contato */
+        height: 250px; /* Define uma altura fixa para todas as caixas de contato */
+        display: flex; /* Para usar flexbox dentro da caixa de contato */
+        flex-direction: column; /* Alinha conteúdo verticalmente */
+        justify-content: center; /* Centraliza verticalmente o conteúdo */
+        align-items: center; /* Centraliza horizontalmente o conteúdo */
+        text-align: center; /* Centraliza o texto dentro das caixas */
+        border: 1px solid #ccc; /* Adiciona uma borda para visualização */
+        padding: 10px; /* Espaçamento interno para os conteúdos */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destaque */
+        border-radius: 8px; /* Bordas arredondadas */
     }
-    
+
     footer {
+        display: flex;
         flex-direction: column; /* Coloca o conteúdo do rodapé em coluna */
         align-items: center; /* Centraliza os itens do rodapé */
-        padding: 20px 2%; /* Pequeno ajuste no padding lateral para tablets */
+        padding: 20px 2%; /* Ajuste no padding lateral */
     }
-    
+
     .footer-left, .footer-right {
         text-align: center; /* Centraliza o texto no rodapé */
     }
-    
+
     .footer-left {
-        margin-bottom: 20px; /* Espaço abaixo do lado esquerdo do rodapé */
-        flex-direction: column; /* Alinha verticalmente no tablet */
+        margin-bottom: 20px; /* Espaço abaixo da seção esquerda do rodapé */
+        display: flex;
+        flex-direction: column; /* Alinha o conteúdo verticalmente */
     }
-    
+
     .footer-right {
-        align-items: center; /* Centraliza os itens do lado direito do rodapé */
+        display: flex;
+        flex-direction: column; /* Alinha o conteúdo verticalmente */
+        align-items: center; /* Centraliza os itens */
+    }
+}
+
+
+
+/* Ajustes para telas entre 1025px e 1672px */
+@media (min-width: 1025px) and (max-width: 1672px) {
+    .about-container {
+        margin: 40px 0; /* Aumenta a margem superior e inferior para evitar a proximidade */
+        flex-direction: column; /* Garante que a imagem e o texto estejam em coluna */
+        align-items: center; /* Centraliza os itens */
+        padding: 20px;
     }
 
-    @media (min-width: 1025px) and (max-width: 1672px) {
-        .about-container {
-            margin: 40px 0; /* Aumenta a margem superior e inferior para evitar a proximidade */
-            flex-direction: column; /* Garante que a imagem e o texto estejam em coluna */
-            align-items: center; /* Centraliza os itens */
-            padding: 20px;
-        }
-    
-        .rounded-image {
-            width: 60%; /* Ajusta a largura conforme necessário */
-            max-width: 400px; /* Limita a largura máxima */
-            margin: 40px 0; /* Aumenta o espaço acima e abaixo da imagem */
-        }
-    
-        .about-text {
-            max-width: 80%; /* Aumenta a largura máxima do texto para telas maiores */
-            text-align: justify; /* Justifica o texto para melhor legibilidade */
-            margin-bottom: 40px; /* Espaço abaixo do texto */
-        }
-    
-        .impact-phrase {
-            font-size: 30px; /* Ajuste o tamanho da fonte para o cabeçalho */
-            margin-bottom: 20px; /* Espaço abaixo da frase de impacto */
-        }
-    
-        /* Ajustes adicionais para a seção de serviços */
-        #servicos {
-            padding: 60px 10%; /* Ajusta o padding para a seção de serviços */
-        }
-    
-        .service-container {
-            display: grid; /* Garante que a grade esteja ativa */
-            grid-template-columns: repeat(2, 1fr); /* Duas colunas para a grade de serviços */
-            gap: 20px; /* Aumenta o espaço entre os serviços */
-            justify-items: center; /* Centraliza os itens na grade */
-        }
-    
-        .service-box {
-            width: 90%; /* Define a largura do box de serviço */
-            height: auto; /* Mantém a altura automática */
-            display: flex; /* Garante que os itens dentro do box possam ser alinhados */
-            flex-direction: column; /* Empilha os itens dentro do box verticalmente */
-            align-items: center; /* Centraliza os itens dentro do box */
-            text-align: center; /* Centraliza o texto no box */
-            padding: 20px; /* Adiciona padding interno ao box */
-            border: 1px solid #ddd; /* Adiciona uma borda para visualização */
-            border-radius: 5px; /* Arredonda os cantos da borda */
-            transition: transform 0.3s; /* Adiciona efeito de transição para o hover */
-        }
-    
-        .service-box:hover {
-            transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-        }
+    .rounded-image {
+        width: 60%; /* Ajusta a largura conforme necessário */
+        max-width: 400px; /* Limita a largura máxima */
+        margin: 40px 0; /* Aumenta o espaço acima e abaixo da imagem */
     }
-}    
 
+    .about-text {
+        max-width: 80%; /* Aumenta a largura máxima do texto para telas maiores */
+        text-align: center; /* Justifica o texto para melhor legibilidade */
+        margin-bottom: 40px; /* Espaço adicional abaixo do texto */
+    }
+
+    .impact-phrase {
+        font-size: 36px; /* Ajusta o tamanho da fonte da frase de impacto */
+    }
+
+    #servicos {
+        padding: 80px 10%; /* Padding ajustado */
+    }
+
+    .service-container {
+        grid-template-columns: repeat(2, 1fr); /* Organiza em duas colunas */
+        gap: 20px; /* Espaçamento entre os boxes */
+    }
+
+    .contact-container {
+        display: flex; /* Define o display como flex */
+        flex-direction: row; /* Garante que os itens estejam lado a lado */
+        justify-content: space-around; /* Espaça uniformemente os itens */
+        align-items: stretch; /* Garante que todas as caixas tenham a mesma altura */
+        margin: 20px 0; /* Espaço entre a seção de contato e outros elementos */
+    }
+
+    .contact-box {
+        width: 30vw; /* Reduz a largura dos boxes para garantir melhor layout */
+        text-align: center; /* Centraliza o conteúdo dos boxes */
+        display: flex; /* Define o display como flex para alinhamento interno */
+        flex-direction: column; /* Organiza o conteúdo em coluna */
+        justify-content: center; /* Centraliza o conteúdo verticalmente */
+        padding: 20px; /* Padding interno para as caixas */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona sombra para melhor visualização */
+        border-radius: 8px; /* Arredonda os cantos das caixas */
+        min-height: 200px;
+        max-width: 100%;
+    }
+
+    .contact-button {
+        width: 100%; /* Garante que o botão ocupe toda a largura disponível */
+        max-width: 400px; /* Aumenta a largura máxima para botões maiores */
+        padding: 15px; /* Aumenta o padding para botões maiores */
+        font-size: 16px; /* Mantém o tamanho da fonte original */
+        margin: 10px 0; /* Espaço entre os botões */
+        display: inline-block; /* Garante que o botão seja tratado como bloco */
+        text-align: center; /* Centraliza o texto do botão */
+        cursor: pointer; /* Adiciona cursor de ponteiro ao passar o mouse */
+        transition: background-color 0.3s; /* Adiciona transição para hover */
+    }
+
+    footer {
+        flex-direction: row; /* Coloca o conteúdo do rodapé lado a lado */
+        justify-content: space-between; /* Espaça os itens do rodapé */
+        padding: 20px 5%; /* Ajuste no padding lateral para telas maiores */
+    }
+
+    .footer-left, .footer-right {
+        width: 45%; /* Ajusta a largura de cada seção do rodapé */
+        text-align: left; /* Alinha o texto à esquerda */
+    }
+
+    /* Centraliza o botão de "Entrar em Contato" na seção "Sobre Mim" */
+    .about-container .contact-button {
+        margin: 20px auto; /* Centraliza o botão horizontalmente */
+    }
+}
